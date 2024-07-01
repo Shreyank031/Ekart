@@ -1,7 +1,7 @@
 pipeline {
 	agent any 
 	tools {
-		jdk 'jdk22'
+		jdk 'jdk16'
 		maven 'maven3'
 	}
 	stages {
@@ -12,7 +12,7 @@ pipeline {
 		}
 		stage ('Compile') {
 			steps {
-				sh "mav clean compile -DskipTests=true"
+				sh "mvn clean compile -DskipTests=true"
 			}
 		}
 	}
